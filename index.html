@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Proxima</title>
+        <meta name="title" content="Proxima">
+        <meta name="description" content="Proxima is a chat where students can ask anything anonymously and receive advice from skilled personel.">
+      
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="./style.css">
+
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.win.css">
+
+        <!--=============== REMIX ICONS LINK ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+        
+        <!--=============== GOOGLE FONTS LINKS ===============-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap">
+
+        <!--=============== ADD ICON LIBRARY ===============--> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="/favicon_io/favicon-32x32.png" type="image/svg+xml">
+
+ </head>
+ <body>
+<section class="services" id="services">
+    <div class="services-left">
+    <h2>Hello! I am <span>Proxima</span></h2>
+    <p> 
+
+        This is an anonymous peer support chats, with vetted moderators and helpful resources. <br> <br>
+        
+        Here, you can chat here to vent, get others’ opinions, or find proof that others feel the way you do. 
+        It’s quick to find help with any struggle – without judgement, because it’s a fully anonymous chat.<br> <br>
+        
+        What makes Proxima safe and helpful?
+        Your identity is kept 100% anonymous. If you do need further assistance and one-on-one sit down please 
+        notify and someone will get hold of you.
+         
+    </p>
+         
+    </div>
+
+    <div class="services-right">
+        
+            <form class="contact-form" action="https://formspree.io/f/xjvqbnlw" method="POST">
+                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea rows="6" name="message" placeholder="Message"></textarea>
+                <label for="cars" required>Would you like someone to contact and assist you?</label>
+           <select id="option" name="option" required>
+        <option value="">--</option>
+      <option value="Yes contact me">Yes please</option>
+      <option value="No, do not contact me">No, thank you</option>
+    </select>
+                <button class="submit-btn" type="submit" value="Submit Now" id="submit" onclick="submitForm()">SUBMIT</button>
+            </form>
+        
+
+        
+    </div>
+
+    <div class="menu-right">
+        <a href="https://wa.me/27680779760/" class="menu-btn">
+            <span>Private WhatsApp chat</span>
+            <i class="ri-message-3-line"></i>
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+</section>
+
+    <!--=============== JS FILE ===============-->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <script src="./js.js"></script>
+ </body>
+
+
+
+</html>
