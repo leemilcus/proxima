@@ -1,87 +1,1433 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Proxima</title>
-        <meta name="title" content="Proxima">
-        <meta name="description" content="Proxima is a chat where students can ask anything anonymously and receive advice from skilled personel.">
-      
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="./style.css">
-
-        <!--=============== BOXICONS ===============-->
-        <link href='https://unpkg.com/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.win.css">
-
-        <!--=============== REMIX ICONS LINK ===============-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Feller | Professional Tree Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --light-green: #6aab5c;
+            --dark-green: #2d5a27;
+            --gradient: linear-gradient(135deg, var(--light-green), var(--dark-green));
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #333;
+            --white: #ffffff;
+        }
         
-        <!--=============== GOOGLE FONTS LINKS ===============-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap">
-
-        <!--=============== ADD ICON LIBRARY ===============--> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="/favicon_io/favicon-32x32.png" type="image/svg+xml">
-
- </head>
- <body>
-<section class="services" id="services">
-    <div class="services-left">
-    <h2>Hello! I am <span>Proxima</span></h2>
-    <p> 
-
-        This is an anonymous peer support chats, with vetted moderators and helpful resources. <br> <br>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         
-        Here, you can chat here to vent, get others’ opinions, or find proof that others feel the way you do. 
-        It’s quick to find help with any struggle – without judgement, because it’s a fully anonymous chat.<br> <br>
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
         
-        What makes Proxima safe and helpful?
-        Your identity is kept 100% anonymous. If you do need further assistance and one-on-one sit down please 
-        notify and someone will get hold of you.
-         
-    </p>
-         
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,197.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--dark-green);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-green);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            background: var(--light-gray);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient);
+            color: var(--white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(45, 90, 39, 0.8);
+            color: var(--white);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-inverse {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-inverse:hover {
+            background: var(--white);
+            color: var(--dark-green);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            color: var(--light-green);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--light-green);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--light-green);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        /* Backoffice Styles */
+        .backoffice-link {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+        
+        .admin-login {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .admin-container {
+            background: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .admin-tab {
+            padding: 10px 20px;
+            background: var(--light-gray);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-tab.active {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .admin-content {
+            display: none;
+        }
+        
+        .admin-content.active {
+            display: block;
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .image-upload {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .image-upload:hover {
+            border-color: var(--light-green);
+        }
+        
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .gallery-management {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item-admin {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item-admin img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .gallery-item-actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .gallery-item-actions button {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark-green);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: all 0.5s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .admin-container {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .services, .about, .cta, .contact, .gallery {
+                padding: 60px 0;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <!-- Logo placeholder - replace with your actual logo -->
+                    <i class="fas fa-tree" style="font-size: 2.5rem;"></i>
+                </div>
+                <div class="logo-text">Village Feller</div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="backoffice-link" id="backofficeToggle">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Professional Tree Care Services</h1>
+            <p>Village Feller provides expert tree felling, trimming, stump removal, and comprehensive garden cleanup services for residential and commercial properties.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive tree care solutions for your property</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Tree Felling</h3>
+                        <p>Safe and efficient tree removal services for trees of all sizes. Our experienced team uses specialized equipment to ensure safety and precision.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stump"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Stump Removal</h3>
+                        <p>Complete stump grinding and removal services to eliminate tripping hazards and improve the appearance of your property.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Tree Trimming</h3>
+                        <p>Professional pruning and trimming to maintain tree health, improve appearance, and prevent potential hazards from overgrown branches.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Palm Shaving</h3>
+                        <p>Specialized palm tree maintenance including shaving, pruning, and removal of dead fronds to keep your palms healthy and attractive.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Plot & Site Cleaning</h3>
+                        <p>Complete clearing and cleaning of land for construction, development, or renovation projects. We leave your site clean and ready for use.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Garden Cleanup</h3>
+                        <p>Thorough garden and yard cleanup services including debris removal, weed control, and general maintenance to restore your outdoor space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work Gallery</h2>
+                <p>See examples of our professional tree care services</p>
+            </div>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="felling">Tree Felling</button>
+                <button class="filter-btn" data-filter="stump">Stump Removal</button>
+                <button class="filter-btn" data-filter="trimming">Tree Trimming</button>
+                <button class="filter-btn" data-filter="palm">Palm Shaving</button>
+                <button class="filter-btn" data-filter="cleaning">Site Cleaning</button>
+            </div>
+            
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Gallery items will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Village Feller</h2>
+                    <p>With over 15 years of experience in the tree care industry, Village Feller has established itself as a trusted provider of professional arboricultural services. Our team of certified arborists and skilled technicians is committed to delivering exceptional results for every project.</p>
+                    <p>We pride ourselves on our attention to detail, commitment to safety, and dedication to customer satisfaction. Whether you need a single tree removed or a complete site clearing, you can count on Village Feller to get the job done right.</p>
+                    <p>Our services are fully insured, and we adhere to all industry safety standards to protect your property and our team during every project.</p>
+                    <a href="#contact" class="btn">Contact Us Today</a>
+                </div>
+                <div class="about-image">
+                    <!-- Replace with your actual image -->
+                    <div style="height: 400px; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                        Team Photo Placeholder
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Outdoor Space?</h2>
+            <p>Contact Village Feller today for a free, no-obligation quote on our professional tree care services. Our team is ready to help you achieve the beautiful, safe outdoor environment you deserve.</p>
+            <a href="#contact" class="btn btn-inverse">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch for a free consultation and quote</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>123 Green Street, Treeville, TV 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@villagefeller.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <select style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="tree-felling">Tree Felling</option>
+                            <option value="stump-removal">Stump Removal</option>
+                            <option value="tree-trimming">Tree Trimming</option>
+                            <option value="palm-shaving">Palm Shaving</option>
+                            <option value="site-cleaning">Plot & Site Cleaning</option>
+                            <option value="garden-cleanup">Garden Cleanup</option>
+                        </select>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Village Feller</h4>
+                    <p>Professional tree care services with a commitment to quality, safety, and customer satisfaction.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Tree Felling</a></li>
+                        <li><a href="#">Stump Removal</a></li>
+                        <li><a href="#">Tree Trimming</a></li>
+                        <li><a href="#">Palm Shaving</a></li>
+                        <li><a href="#">Site Cleaning</a></li>
+                        <li><a href="#">Garden Cleanup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Green Street, Treeville</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@villagefeller.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Village Feller. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Button -->
+    <button class="admin-login" id="adminLoginBtn">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2>Village Feller Admin Panel</h2>
+                <button id="closeAdminPanel"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="login">Login</button>
+                <button class="admin-tab" data-tab="gallery-manager" style="display:none;">Gallery Manager</button>
+                <button class="admin-tab" data-tab="add-image" style="display:none;">Add Image</button>
+            </div>
+            
+            <div class="admin-content active" id="login-tab">
+                <div class="login-form">
+                    <h3>Admin Login</h3>
+                    <form id="adminLoginForm">
+                        <input type="text" placeholder="Username" id="adminUsername" required>
+                        <input type="password" placeholder="Password" id="adminPassword" required>
+                        <button type="submit" class="btn" style="width: 100%;">Login</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="admin-content" id="gallery-manager-tab">
+                <h3>Manage Gallery Images</h3>
+                <div class="gallery-management" id="adminGalleryContainer">
+                    <!-- Admin gallery items will be loaded here -->
+                </div>
+            </div>
+            
+            <div class="admin-content" id="add-image-tab">
+                <h3>Add New Image to Gallery</h3>
+                <form id="addImageForm">
+                    <div class="form-group">
+                        <label for="imageTitle">Image Title</label>
+                        <input type="text" id="imageTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageCategory">Service Category</label>
+                        <select id="imageCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="felling">Tree Felling</option>
+                            <option value="stump">Stump Removal</option>
+                            <option value="trimming">Tree Trimming</option>
+                            <option value="palm">Palm Shaving</option>
+                            <option value="cleaning">Site Cleaning</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageDescription">Description</label>
+                        <textarea id="imageDescription" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Upload Image</label>
+                        <div class="image-upload" id="imageUploadArea">
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                            <p>Click to upload or drag and drop</p>
+                            <p>PNG, JPG, GIF up to 5MB</p>
+                            <input type="file" id="imageFile" accept="image/*" style="display: none;">
+                            <img id="imagePreview" class="image-preview">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Add to Gallery</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="services-right">
-        
-            <form class="contact-form" action="https://formspree.io/f/xjvqbnlw" method="POST">
-                <input type="text" name="Name" placeholder="Full Name" >
-                <input type="email" name="Email" placeholder="Email">
-                <textarea rows="6" name="message" placeholder="Message"></textarea>
-                <label for="cars" >Would you like someone to contact and assist you?</label>
-           <select id="option" name="option" required>
-        <option value="">--</option>
-      <option value="Yes contact me">Yes please</option>
-      <option value="No, do not contact me">No, thank you</option>
-    </select>
-                <button class="submit-btn" type="submit" value="Submit Now" id="submit" onclick="submitForm()">SUBMIT</button>
-            </form>
-        
+    <script>
+        // Sample gallery data - in a real application, this would come from a database
+        let galleryData = [
+            {
+                id: 1,
+                title: "Large Oak Removal",
+                category: "felling",
+                description: "Safe removal of a mature oak tree near a residential property",
+                imageUrl: "https://via.placeholder.com/300x200/6aab5c/ffffff?text=Tree+Felling+1"
+            },
+            {
+                id: 2,
+                title: "Pine Tree Felling",
+                category: "felling",
+                description: "Precision felling in a confined backyard space",
+                imageUrl: "https://via.placeholder.com/300x200/6aab5c/ffffff?text=Tree+Felling+2"
+            },
+            {
+                id: 3,
+                title: "Complete Stump Grinding",
+                category: "stump",
+                description: "Removing multiple stumps to prepare for landscaping",
+                imageUrl: "https://via.placeholder.com/300x200/2d5a27/ffffff?text=Stump+Removal+1"
+            },
+            {
+                id: 4,
+                title: "Large Stump Removal",
+                category: "stump",
+                description: "Professional removal of a large oak tree stump",
+                imageUrl: "https://via.placeholder.com/300x200/2d5a27/ffffff?text=Stump+Removal+2"
+            },
+            {
+                id: 5,
+                title: "Residential Tree Pruning",
+                category: "trimming",
+                description: "Health-focused pruning of mature trees",
+                imageUrl: "https://via.placeholder.com/300x200/6aab5c/ffffff?text=Tree+Trimming+1"
+            }
+        ];
 
-        
-    </div>
+        // DOM Elements
+        const galleryContainer = document.getElementById('galleryContainer');
+        const adminGalleryContainer = document.getElementById('adminGalleryContainer');
+        const adminPanel = document.getElementById('adminPanel');
+        const adminLoginBtn = document.getElementById('adminLoginBtn');
+        const backofficeToggle = document.getElementById('backofficeToggle');
+        const closeAdminPanel = document.getElementById('closeAdminPanel');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const adminContents = document.querySelectorAll('.admin-content');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const addImageForm = document.getElementById('addImageForm');
+        const imageUploadArea = document.getElementById('imageUploadArea');
+        const imageFile = document.getElementById('imageFile');
+        const imagePreview = document.getElementById('imagePreview');
+        const filterButtons = document.querySelectorAll('.filter-btn');
 
-    <div class="menu-right">
-        <a href="https://wa.me/27680779760/" class="menu-btn">
-            <span>Private WhatsApp chat</span>
-            <i class="ri-message-3-line"></i>
-        </a>
-    </div>
-</section>
+        // Initialize the gallery
+        function initGallery() {
+            renderGallery();
+            renderAdminGallery();
+        }
 
-    <!--=============== JS FILE ===============-->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
-    <script src="./js.js"></script>
- </body>
+        // Render gallery on the main site
+        function renderGallery(filter = 'all') {
+            galleryContainer.innerHTML = '';
+            
+            const filteredData = filter === 'all' 
+                ? galleryData 
+                : galleryData.filter(item => item.category === filter);
+            
+            filteredData.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('data-category', item.category);
+                
+                galleryItem.innerHTML = `
+                    <img src="${item.imageUrl}" alt="${item.title}">
+                    <div class="gallery-overlay">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                `;
+                
+                galleryContainer.appendChild(galleryItem);
+            });
+        }
 
+        // Render gallery in admin panel
+        function renderAdminGallery() {
+            adminGalleryContainer.innerHTML = '';
+            
+            galleryData.forEach(item => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item-admin';
+                
+                galleryItem.innerHTML = `
+                    <img src="${item.imageUrl}" alt="${item.title}">
+                    <div class="gallery-item-actions">
+                        <button class="edit-image" data-id="${item.id}"><i class="fas fa-edit"></i></button>
+                        <button class="delete-image" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div style="padding: 10px;">
+                        <h4>${item.title}</h4>
+                        <p>${getCategoryName(item.category)}</p>
+                    </div>
+                `;
+                
+                adminGalleryContainer.appendChild(galleryItem);
+            });
+            
+            // Add event listeners for delete buttons
+            document.querySelectorAll('.delete-image').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    deleteImage(id);
+                });
+            });
+        }
 
+        // Get category name from category code
+        function getCategoryName(category) {
+            const categories = {
+                'felling': 'Tree Felling',
+                'stump': 'Stump Removal',
+                'trimming': 'Tree Trimming',
+                'palm': 'Palm Shaving',
+                'cleaning': 'Site Cleaning'
+            };
+            
+            return categories[category] || 'Unknown';
+        }
 
+        // Delete an image from the gallery
+        function deleteImage(id) {
+            if (confirm('Are you sure you want to delete this image?')) {
+                galleryData = galleryData.filter(item => item.id !== id);
+                renderGallery();
+                renderAdminGallery();
+            }
+        }
+
+        // Add a new image to the gallery
+        function addImage(title, category, description, imageUrl) {
+            const newId = galleryData.length > 0 ? Math.max(...galleryData.map(item => item.id)) + 1 : 1;
+            
+            const newImage = {
+                id: newId,
+                title,
+                category,
+                description,
+                imageUrl
+            };
+            
+            galleryData.push(newImage);
+            renderGallery();
+            renderAdminGallery();
+            
+            // Reset form
+            addImageForm.reset();
+            imagePreview.style.display = 'none';
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            initGallery();
+            
+            // Mobile Menu Toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Gallery Filtering
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    renderGallery(filterValue);
+                });
+            });
+            
+            // Admin Panel Toggle
+            adminLoginBtn.addEventListener('click', () => {
+                adminPanel.style.display = 'flex';
+            });
+            
+            backofficeToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                adminPanel.style.display = 'flex';
+            });
+            
+            closeAdminPanel.addEventListener('click', () => {
+                adminPanel.style.display = 'none';
+            });
+            
+            // Admin Tab Switching
+            adminTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    adminTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update active content
+                    adminContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // Admin Login
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const username = document.getElementById('adminUsername').value;
+                const password = document.getElementById('adminPassword').value;
+                
+                // Simple authentication - in a real application, this would be more secure
+                if (username === 'admin' && password === 'password') {
+                    // Show admin tabs
+                    document.querySelectorAll('.admin-tab').forEach(tab => {
+                        tab.style.display = 'inline-block';
+                    });
+                    
+                    // Switch to gallery manager
+                    adminTabs.forEach(t => t.classList.remove('active'));
+                    document.querySelector('.admin-tab[data-tab="gallery-manager"]').classList.add('active');
+                    
+                    adminContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById('gallery-manager-tab').classList.add('active');
+                } else {
+                    alert('Invalid username or password');
+                }
+            });
+            
+            // Image Upload
+            imageUploadArea.addEventListener('click', () => {
+                imageFile.click();
+            });
+            
+            imageFile.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.style.display = 'block';
+                    }
+                    
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+            
+            // Add Image Form
+            addImageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const title = document.getElementById('imageTitle').value;
+                const category = document.getElementById('imageCategory').value;
+                const description = document.getElementById('imageDescription').value;
+                
+                // In a real application, you would upload the image to a server
+                // For this demo, we'll use a placeholder
+                const imageUrl = imagePreview.style.display !== 'none' 
+                    ? imagePreview.src 
+                    : `https://via.placeholder.com/300x200/6aab5c/ffffff?text=${encodeURIComponent(title)}`;
+                
+                addImage(title, category, description, imageUrl);
+                
+                // Switch to gallery manager
+                adminTabs.forEach(t => t.classList.remove('active'));
+                document.querySelector('.admin-tab[data-tab="gallery-manager"]').classList.add('active');
+                
+                adminContents.forEach(content => content.classList.remove('active'));
+                document.getElementById('gallery-manager-tab').classList.add('active');
+            });
+        });
+    </script>
+</body>
 </html>
